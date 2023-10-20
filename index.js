@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
+const cors = require('cors');
 dotenv.config();
 
 const app = express();
@@ -8,6 +9,7 @@ const AllRouter = require('./routes/AllRoutes');
 
 const uri = "mongodb+srv://cluster0.husqbdo.mongodb.net/realgrande?retryWrites=true&w=majority";
 
+const corspolicy = { origin: 'http://localhost:3001' };
 
 const db = module.exports = () => {
     try {
@@ -24,7 +26,8 @@ const db = module.exports = () => {
     }
 }
 db();
-
+app.use(cors(corspolicy));
+app.use(express.json());
 
 app.use('/', (req, res, next) => {
     console.log('a new request received');

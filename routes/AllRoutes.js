@@ -3,7 +3,10 @@ const { Houses, Users, Enquiries } = require('../models/AllSchema');
 // const Houses = require('../models/HouseSchema')
 const AllRouter = express.Router();
 const multer = require('multer');
+
 let getFields = multer();
+
+
 
 
 // To get all the houses info
