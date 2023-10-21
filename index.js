@@ -9,7 +9,7 @@ const AllRouter = require('./routes/AllRoutes');
 
 const uri = "mongodb+srv://cluster0.husqbdo.mongodb.net/realgrande?retryWrites=true&w=majority";
 
-const corspolicy = { origin: 'http://localhost:3001' };
+const corspolicy = { origin: 'http://localhost:3000' };
 
 const db = module.exports = () => {
     try {

@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const uniqueValidator = require('mongoose-unique-validator');
 
 // Create the house schema
 const HouseSchema = new mongoose.Schema({
@@ -37,7 +38,8 @@ const UserSchema = new mongoose.Schema({
     },
     "email": {
         type: String,
-        require: true
+        require: true,
+        unique: true
     },
     "password": String,
     "gender": {
@@ -51,6 +53,8 @@ const UserSchema = new mongoose.Schema({
         default: 'customer'
     }
 })
+
+UserSchema.plugin(uniqueValidator);
 
 
 // Use the studentSchema to create the students collection
