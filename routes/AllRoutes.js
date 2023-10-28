@@ -1,13 +1,10 @@
 const express = require('express');
-const { Houses, Users, Enquiries } = require('../models/AllSchema');
-// const Houses = require('../models/HouseSchema')
-const AllRouter = express.Router();
 const multer = require('multer');
+const { Houses, Users, Enquiries } = require('../models/AllSchema');
+
+const AllRouter = express.Router();
 
 let getFields = multer();
-
-
-
 
 // To get all the houses info
 AllRouter.get('/', async (req, res) => {

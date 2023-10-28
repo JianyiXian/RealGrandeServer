@@ -27,6 +27,9 @@ const EnquirySchema = new mongoose.Schema({
     date: {
         type: Date,
         default: Date.now()
+    },
+    house: {
+        type: String
     }
 
 })
