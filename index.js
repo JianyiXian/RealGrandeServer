@@ -7,9 +7,9 @@ dotenv.config();
 const app = express();
 const AllRouter = require('./routes/AllRoutes');
 
-const uri = "mongodb+srv://cluster0.husqbdo.mongodb.net/realgrande?retryWrites=true&w=majority";
+const uri = process.env.DBURI;
 
-const corspolicy = { origin: 'http://localhost:3000' };
+const corspolicy = { origin: process.env.FRONTEND_URL };
 
 const db = module.exports = () => {
     try {
